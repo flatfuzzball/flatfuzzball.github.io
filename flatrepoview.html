@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>flat's Github Repository Viewer</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .form-group input[type="text"] {
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        flex: 1;
+      }
+
+      .form-group button {
+        font-size: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .form-group button:hover {
+        background-color: #0062cc;
+      }
+
+      .repo-list a {
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #000;
+        margin-bottom: 10px;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .repo-list a:hover {
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Github Repository Viewer</h1>
+      <div class="form-group">
+        <label for="username-input">Github Username:</label>
+        <input type="text" id="username-input" placeholder="Enter Github Username">
+        <button id="submit-btn">Submit</button>
+      </div>
+      <div id="repos" class="repo-list"></div>
+    </div>
+
+    <script>
+      const reposContainer = document.getElementById('repos');
+      const submitBtn = document.getElementById('submit-btn');
+
+      submitBtn.addEventListener('click', () => {
+        const username = document.getElementById('username-input').value;
+
+        fetch(`https://api.github.com/users/${username}/repos`)
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(repo => {
+              const repoLink = document.createElement('a');
+              repoLink.href = repo.html_url;
+
+              const repoName = document.createElement('h2');
+              repoName.innerText = repo.name;
+              repoLink.appendChild(repoName);
+
+              const repoDesc = document.createElement('p');
+              repoDesc.innerText = repo.description;
+              repoLink.appendChild(repoDesc);
+              reposContainer.appendChild(repoLink);
+        });
+      })
+      .catch(error => console.error(error));
+  });
+</script>
+</body>
+</html>
+
+             
