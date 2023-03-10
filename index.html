@@ -2,94 +2,81 @@
 <html>
 <head>
 <style>
-/* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Global Styles */
 
-/* Global styles */
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.4;
-  background-color: #f2f2f2;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+/* Header Styles */
 
-/* Header styles */
 header {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Button styles */
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   background-color: #333;
   color: #fff;
-  font-size: 1rem;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Navigation Styles */
+
+nav {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+a {
+  color: #333;
   text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.button:hover {
-  background-color: #555;
+a:hover {
+  background-color: #333;
+  color: #fff;
 }
 
-/* Footer styles */
+/* Main Content Styles */
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Footer Styles */
+
 footer {
   background-color: #333;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
-.footer-text {
-  font-size: 0.8rem;
-}
-
-.footer-link {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 2px;
-}
-
-.footer-link:hover {
-  border-bottom: none;
-  color: #ccc;
-}
 </style>
 </head>
 <body>
@@ -100,6 +87,6 @@ footer {
 <nav><a href="/flatpedia">flatpedia</a></nav>
 <nav><a href="/flatranslate">flatranslate</a></nav>
 <nav><a href="/flatrepoview">flatrepoview</a></nav>
-<nav><a href="/MDtextedit">MDtextediit</a></nav>
+<nav><a href="/MDtextedit">MDtextedit</a></nav>
 </body>
 </html>
