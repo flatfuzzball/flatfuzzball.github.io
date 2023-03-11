@@ -4,55 +4,91 @@
 	<title>flat's Markdown Text Editor</title>
 	<script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
     <style>body {
-  font-family: Arial, sans-serif;
+  font-family: 'Tahoma', 'Verdana', sans-serif;
+  background-color: #0071C5;
   margin: 0;
   padding: 0;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  color: #FFF;
 }
 
 textarea {
-  width: 50%;
-  font-size: 16px;
-  line-height: 1.5;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 100%;
+  height: 400px;
+  border: 1px solid #555;
+  background-color: #F0F0F0;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  font-size: 14px;
+  padding: 5px;
+  margin: 10px 0;
 }
 
-button {
-  font-size: 16px;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+input[type=file] {
+  display: none;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  border: 1px solid #888;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0062cc;
+.menu li:hover {
+  background-color: #0071C5;
+  color: #FFF;
 }
 
-#preview {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.menu a {
+  text-decoration: none;
+  color: #000;
 }
+
+.menu button {
+  background-color: #FFF;
+  border: 1px solid #888;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: #0071C5;
+  color: #FFF;
+}
+
     </style>
 </head>
 <body>
 	<h1>flat's Markdown Text Editor</h1>
-	<textarea id="editor" rows="10" cols="50"></textarea>
-	<br>
-	<button onclick="saveText()">Save</button>
-	<button onclick="loadText()">Load</button>
+<textarea id="editor" rows=10 cols=50></textarea>
+<div class="menu">
+  <button onclick="toggleMenu()">File</button>
+  <input type="file" id="fileInput" onchange="loadFile()" style="display: none">
+  <ul id="menuList" style="display: none">
+    <li><a href="#" onclick="saveFile()">Save file</a></li>
+    <li><a href="#" onclick="document.getElementById('fileInput').click()">Open file</a></li>
+	<li ><a href="#" onclick="saveText()">Save</a></li>
+	<li ><a href="#" onclick="loadText()">Load</a></li>
+  </ul>
+</div>
+<input type="file" id="fileInput" onchange="loadFile()" style="display: none">
+
+
 	<div id="preview"></div>
 	<script>var converter = new showdown.Converter();
 
@@ -67,6 +103,55 @@ function loadText() {
   document.getElementById("editor").value = savedText;
   updatePreview();
 }
+function saveFile() {
+  const content = document.getElementById("editor").value;
+  const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+
+  const filename = prompt("Enter a filename", "my_file.md");
+
+  if (filename !== null) {
+    if (window.navigator.msSaveOrOpenBlob) {
+      window.navigator.msSaveBlob(blob, filename);
+    } else {
+      const a = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }, 0);
+    }
+  }
+}
+function toggleMenu() {
+  const menuList = document.getElementById("menuList");
+  menuList.style.display = menuList.style.display === "none" ? "block" : "none";
+}
+
+
+function loadFile() {
+  const file = document.getElementById("fileInput").files[0];
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    document.getElementById("editor").value = event.target.result;
+  };
+  reader.readAsText(file);
+}
+
+window.onload = function () {
+  const content = localStorage.getItem("editor_content");
+  if (content) {
+    document.getElementById("editor").value = content;
+  }
+};
+
+window.onbeforeunload = function () {
+  localStorage.setItem("editor_content", document.getElementById("editor").value);
+};
+
 
 function updatePreview() {
   var markdownText = document.getElementById("editor").value;
