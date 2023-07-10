@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flat's Markdown to HTML Converter</title>
+    <style>
+        body {
+    margin: 40px auto;
+    max-width: 650px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #F4EEE0;
+    padding: 0 10px;
+    background-color: #393646;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+a {
+    color: #E1D4BB;
+}
+
+h3 {
+    color: #6D5D6E;
+}
+
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        #output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Markdown to HTML Converter</h1>
+    <p>Enter your Markdown text below:</p>
+    <textarea id="markdown-input" placeholder="Enter Markdown text"></textarea>
+    <button onclick="convert()">Convert</button>
+    <pre id="output"></pre>
+
+    <script>
+        function convert() {
+            var markdownInput = document.getElementById('markdown-input').value;
+            var outputPre = document.getElementById('output');
+
+            // Convert Markdown to HTML
+            var converter = new showdown.Converter();
+            var html = converter.makeHtml(markdownInput);
+
+            // Update the output pre
+            outputPre.textContent = html;
+            
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+</body>
+</html>
