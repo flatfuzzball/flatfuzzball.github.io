@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-  //stolen from w3schools bc im lazy af rn lol
-  function copy() {
-  // Get the text field
-  var copyText = document.getElementById("text");
-
-  // Select the text field
-  copyText.select(); 
-  copyText.setSelectionRange(0, 99999); // For mobile devices
-
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
-}
-
-</script>
 <style>
 body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#F4EEE0;padding:0 10px;background-color:#393646}h1,h2,h3{line-height:1.2}
 a{color:#E1D4BB}
@@ -44,6 +26,5 @@ iiiiii ssssss hh  hh
 iiiiii ssssss hh  hh
 
 </pre>
-<button onclick="copy()">copy text</button>
 </body>
 </html>
