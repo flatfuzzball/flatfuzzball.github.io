@@ -1,0 +1,78 @@
+Generic 6x10 block font. v1.
+By flat - https://flatfuzzball.github.io/
+2023
+
+Base letters(all combined are 42 lines x 49 cols):
+
+aaaaaa bbbbbb cccccc ddddd  eeeeee ffffff gggggg
+aaaaaa bbbbbb cccccc dddddd eeeeee ffffff gggggg
+aa  aa bb  bb cc     dd  dd ee     ff     gg
+aa  aa bb  bb cc     dd  dd ee     ff     gg
+aaaaaa bb  bb cc     dd  dd eeeeee ffffff gg
+aaaaaa bbbbb  cc     dd  dd eeeeee ffffff gg
+aa  aa bbbbb  cc     dd  dd ee     ff     gg ggg
+aa  aa bb  bb cc     dd  dd ee     ff     gg  gg
+aa  aa bbbbbb cccccc dddddd eeeeee ff     gggggg
+aa  aa bbbbbb cccccc ddddd  eeeeee ff     gggggg
+
+hh  hh iiiiii jjjjjj kk  kk ll     mmmmmm nn  nn
+hh  hh iiiiii jjjjjj kk  kk ll     mmmmmm nn  nn
+hh  hh   ii       jj kk  kk ll     m mm m nn  nn
+hh  hh   ii       jj kk  kk ll     m mm m nn  nn
+hhhhhh   ii       jj kk kk  ll     m mm m nnn nn
+hhhhhh   ii       jj kkkk   ll     m mm m nn nnn
+hh  hh   ii   jj  jj kk kk  ll     m mm m nn  nn
+hh  hh   ii   jj  jj kk  kk ll     m mm m nn  nn
+hh  hh iiiiii jjjjjj kk  kk llllll m mm m nn  nn
+hh  hh iiiiii jjjjjj kk  kk llllll m mm m nn  nn
+
+oooooo pppppp qqqqqq rrrrrr ssssss tttttt uu  uu
+oooooo pppppp qqqqqq rrrrrr ssssss tttttt uu  uu
+oo  oo pp  pp qq  qq rr  rr ss       tt   uu  uu
+oo  oo pp  pp qq  qq rrrrrr ss       tt   uu  uu
+oo  oo pppppp qq  qq rrrrr  ssssss   tt   uu  uu
+oo  oo pppppp qq  qq rr  rr ssssss   tt   uu  uu
+oo  oo pp     qqqqqq rr  rr     ss   tt   uu  uu
+oo  oo pp     qqqqqq rr  rr     ss   tt   uu  uu
+oooooo pp        qq  rr  rr ssssss   tt   uuuuuu
+oooooo pp         qq rr  rr ssssss   tt   uuuuuu
+
+vv  vv w ww w x    x yy  yy zzzzzz
+vv  vv w ww w x    x yy  yy zzzzzz
+vv  vv w ww w x    x yy  yy     zz
+vv  vv w ww w  x  x  yy  yy     zz
+vv  vv w ww w   xx     yy   zzzzzz
+vv  vv w ww w  x  x    yy   zzzzzz
+vv  vv w ww w x    x   yy   zz
+vv  vv w ww w x    x   yy   zz 
+ vvvv  wwwwww x    x   yy   zzzzzz
+  vv   wwwwww x    x   yy   zzzzzz
+
+Numbers(all combined are 10 lines x 70 cols):
+
+1111   22222  333333 44  44 555555 666666 777777 888888 999999 000000
+1111   222222 333333 44  44 555555 666666 777777 888888 999999 000000
+  11       22     33 44  44 55     66         77 88  88 99  99 00  00
+  11       22     33 44  44 555555 66         77 88  88 99  99 00  00
+  11   222222 333333 444444 555555 666666     77 888888 999999 000 00
+  11   22222  333333     44     55 666666     77 888888 999999 00 000
+  11   22         33     44     55 66  66     77 88  88     99 00  00
+  11   22         33     44     55 66  66     77 88  88     99 00  00
+111111 222222 333333     44 555555 666666     77 888888     99 000000
+111111 222222 333333     44 555555 666666     77 888888     99 000000
+
+Other symbols:
+
+!!!!!! ??????                                      $$    (((((  )))))  ""  ""   ''  
+!!!!!! ??????  #  #                                $$   (            ) ""  ""   ''  
+!!!!!!     ??  #  #      //           +          $$$$$$ (            ) ""  ""   ''  
+!!!!!! ?????? ######    //  ======    +          $$$$$$ (            ) ""  ""   ''  
+!!!!!! ??      #  #    //           +++++ ------ $$$$   (            )
+!!!!!! ?????? ######  //    ======    +          $$$$$$ (            )
+!!!!!! ??????  #  #  //               +            $$$$ (            )
+               #  #                              $$$$$$ (            )
+!!!!!! ??????                                    $$$$$$ (            )
+!!!!!! ??????                                      $$    (((((  )))))  
+
+
+End.
