@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <head>
+        <style type="text/css">body{margin:40px
+        auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+        10px}h1,h2,h3{line-height:1.2}</style>
+        </head>
+        <pre><code>         ^
+          //                        ___   ___
+        (*)     &quot;O&quot;                /  _   _  \
+       (*)                           / \ / \
+      (*)    &quot;O&quot;    fitch.fish      |   |   |    |\
+     //                             |O  |O  |___/  \     ++
+    //                               \_/ \_/    \   | ++
+   //                              _/      __    \  \
+   /     /|   /\                  (________/ __   |_/
+        / |  |  |                   (___      /   |    |\
+       / /  /   |                     \     \|    |___/  |
+      |  | |   /                       \_________      _/   ++++
+     /   | |  |                      ++           \    |
+    |   / /   |                              ++   |   /  +++
+   /   /  |   |                               ++ /__/
+   ~~~ ~~~~   ~~~~~~~~~~~~  ~~~~~~~~~~~~~  ~~~~        ~~+++~~~~ ~
+   </code></pre>
+        <body>
+        <h2>The worst fish plugin manager</h2>
+        <p><a href="https://github.com/flatfuzzball/fitch.fish"/>Fitch</a> is a very simple and very bad plugin manager for the fish shell. It can (very inefficiently) download all <a href="https://github.com/jorgebucaran/fisher">fisher</a> compatible plugins into your functions folder and (sometimes, maybe) delete them. It can not update or list your plugins, and it does not keep them away from your main config directory. It's very easily improvable and extended, but I can't bother with trying.</p>
+        <h2>Get fitch:</h2>
+        <pre><code>curl https://raw.githubusercontent.com/flatfuzzball/fitch.fish/main/completions/fitch.fish &gt; $__fish_config_dir/completions/fitch.fish
+        curl https://raw.githubusercontent.com/flatfuzzball/fitch.fish/main/functions/fitch.fish &gt; $__fish_config_dir/functions/fitch.fish
+        </code></pre>
+        <h2>Use fitch:</h2>
+        <h3>Get plugins:</h3>
+        <p><code>fitch --get(/-g) username/repo</code></p>
+        <h3>Remove plugins</h3>
+        <p><code>fitch --del(/-d) username/repo</code></p>
+        <h3>What our users say:</h3>
+        <blockquote>
+        <p>I wish to die.</p>
+        </blockquote>
+        <p><em>- Linus Torvalds</em></p>
+        <blockquote>
+        <p>God did not ask for this.</p>
+        </blockquote>
+        <p><em>- Terry Davis (RIP)</em></p>
+    </main>
+    <footer>
+      <p><strong>Made in <a href="https://howl.io/">howl</a>, with hate, by <a href="https://flatfuzzball.github.io">flat</a>.</strong></p>
+        </body>
+    </footer>
+  </body>
+</html>
